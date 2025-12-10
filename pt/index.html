@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mariana · Clareza e alinhamento interno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Acompanho pessoas em momentos de decisão e transição de vida, para que encontrem clareza e regressem a si." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div class="page">
+
+    <div class="lang-switch">
+      <span class="active">PT</span> | <a href="../en/index.html">EN</a>
+    </div>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+      ☰ <span>Menu</span>
+    </button>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html" class="active">Início</a>
+      <a href="decision-breakthrough.html">Clareza para Decidir</a>
+      <a href="de-volta-a-ti.html">De Volta a Ti</a>
+      <a href="sobre-mim.html">Sobre Mim</a>
+    </nav>
+
+    <header>
+        <div class="hero-text">
+            <img src="../assets/img/mariana-profile.jpg" alt="Mariana a sorrir" class="hero-inline-photo" />
+            <h1>Quando pensas demais e te ouves de menos</h1>
+            <p class="subtitle">
+            Um espaço para decisões que te tiram a paz e mudanças de vida que já não podes adiar.
+            </p>
+            <p class="lead">
+            Talvez sintas que estás num ponto de viragem. Continuar como está já não é opção,
+            mas o próximo passo ainda não está claro.
+            </p>
+            <p>
+            Podes estar a carregar uma decisão específica, ou simplesmente a sensação de que a vida
+            que estás a viver já não encaixa em ti. Em ambos os casos, o que dói é o mesmo:
+            <strong>ficar presa no meio</strong>.
+            </p>
+            <p>
+            Aqui encontras dois espaços diferentes, mas com o mesmo propósito: ajudar-te a voltar a ti,
+            para que as tuas escolhas venham de um lugar interno de verdade e não de pressão externa.
+            </p>
+        </div>
+    </header>
+
+    <section>
+        <h2>Como posso estar ao teu lado</h2>
+        <div class="highlight">
+            <p><strong>Decision Breakthrough Call · Clareza para Decidir</strong></p>
+            <p>
+            Uma sessão única para decisões que te estão a tirar paz, pequenas ou grandes.
+            Um espaço para acalmar o ruído, organizar o que está confuso e encontrares o teu
+            próximo passo a partir de ti.
+            </p>
+            <p>
+            <a href="decision-breakthrough.html">Saber mais sobre a sessão</a>
+            </p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>De Volta a Ti · Acompanhamento de transição</strong></p>
+            <p>
+            Um processo contínuo para quem sente que já não se reconhece na vida que está a viver
+            e quer realinhar trabalho, estilo de vida e presença com quem é hoje.
+            </p>
+            <p>
+            <a href="de-volta-a-ti.html">Saber mais sobre o acompanhamento</a>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Se te reconheces nisto</h2>
+        <ul>
+            <li>sentes que pensas demais e te perdes em cenários mentais</li>
+            <li>já não te sentes em casa na vida que estás a viver</li>
+            <li>tens medo de tomar “a decisão errada” e ficas paralisada</li>
+            <li>queres confiar mais no que sentes, mas duvidas de ti</li>
+        </ul>
+        <p>
+            então é provável que algo em ti já esteja a pedir mudança.  
+            Não precisas de atravessar isso sozinha.
+        </p>
+    </section>
+
+    <section>
+        <h2>Por onde começar</h2>
+        <p>
+            Se há uma decisão específica a pesar em ti neste momento, começa pela
+            <strong>Decision Breakthrough Call</strong>. Às vezes basta um espaço seguro e honesto
+            para ouvires o que já sabias, mas não estavas a conseguir assumir.
+        </p>
+        <p>
+            Se sentes que a questão já não é só uma decisão, mas a forma como estás a viver,
+            o <strong>De Volta a Ti</strong> pode ser o espaço para essa transição com apoio,
+            presença e verdade.
+        </p>
+        <p>
+            Se ainda não sabes bem por onde começar, envia-me uma mensagem e partilha o que
+            estás a viver. A partir daí, encontramos juntas o primeiro passo.
+        </p>
+        <a class="btn" href="https://ig.me/m/marianarabacal" target="_blank" rel="noopener">
+            Fala comigo 
+        </a>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Mariana.</p>
+      <p>Este espaço não substitui acompanhamento médico ou psicológico.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+
+    if (toggle && nav) {
+     toggle.addEventListener('click', () => {
+       const isOpen = nav.classList.toggle('open');
+       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  </script>
+</body>
+</html>
