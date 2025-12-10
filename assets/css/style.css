@@ -60,34 +60,42 @@ header {
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
   padding: 22px 20px;
   margin-bottom: 32px;
+  display: flex;
   flex-direction: column-reverse;
   align-items: center;
   gap: 18px;
 }
 
-header .hero-text {
-  max-width: 900px;
-  margin: 0 auto;
+.hero-text {
+  max-width: 620px;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+}
+
+.hero-photo img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 25%; /* ajusta a “altura” da cara no círculo */
+  border: 3px solid var(--bg-soft);
 }
 
 @media (min-width: 768px) {
   header {
     flex-direction: row;
     justify-content: space-between;
-    padding: 26px 28px;
     align-items: flex-start;
+    padding: 26px 28px;
+  }
+
+  .hero-text {
+    max-width: 620px;
   }
 }
 
-@media (min-width: 768px) {
-  .hero-photo {
-    margin-top: 4px;
-  }
-}
-
-.hero-text {
-  max-width: 520px;
-}
 
 h1 {
   margin: 0 0 6px;
@@ -111,35 +119,6 @@ h1 {
   font-weight: 600;
 }
 
-.hero-photo {
-  flex-shrink: 0;
-}
-
-.hero-photo img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 30%;
-  border: 3px solid var(--bg-soft);
-}
-
-.hero-inline-photo {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--bg-soft);
-  display: block;
-  margin: 0 auto 16px; /* mobile: centrada acima do texto */
-}
-
-@media (min-width: 768px) {
-  .hero-inline-photo {
-    float: right;
-    margin: 0 0 12px 24px; /* encosta à direita, com espaço para o texto à esquerda e por baixo */
-  }
-}
 
 
 /* botões */
@@ -239,7 +218,7 @@ footer {
   border-left: 4px solid var(--olive);
 }
 
-/* navegação principal */
+/* botão de navegação (mobile) */
 
 .nav-toggle {
   display: inline-flex;
@@ -259,18 +238,14 @@ footer {
   font-size: 0.9rem;
 }
 
-@media (min-width: 768px) {
-  .nav-toggle {
-    display: none;
-  }
-}
+/* por defeito, mostramos o botão e decidimos a nav com media queries */
 
 .main-nav {
   margin-bottom: 18px;
   font-size: 0.95rem;
 }
 
-/* mobile: nav escondida por defeito */
+/* mobile: nav escondida, só aparece quando tiver .open */
 
 @media (max-width: 767px) {
   .main-nav {
@@ -288,16 +263,20 @@ footer {
   }
 }
 
-/* desktop: nav sempre visível, links em linha */
+/* desktop: escondemos o botão e mostramos a nav em linha */
 
 @media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
   .main-nav {
     display: block;
   }
 
   .main-nav a {
-    margin-right: 18px;
     display: inline-block;
+    margin-right: 18px;
   }
 }
 
@@ -326,6 +305,36 @@ footer {
   height: 2px;
   background: var(--olive);
   border-radius: 999px;
+}
+
+/* cor fixa para o botão de navegação em mobile */
+.nav-toggle {
+  color: var(--olive); /* cor do texto do site */
+  border-color: rgba(0,0,0,0.20);
+}
+
+.nav-toggle span {
+  color: var(--olive); /* força a mesma cor no texto "Menu" */
+}
+
+/* garantir que o ícone hambúrguer também fica da mesma cor */
+.nav-toggle::before,
+.nav-toggle::after {
+  color: var(--olive);
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: transparent; /* remove highlight azul no iOS */
+}
+
+.nav-toggle:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+}
+
+.nav-toggle:active {
+  color: var(--olive);
+  border-color: var(--olive);
 }
 
 
