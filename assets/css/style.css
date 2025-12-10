@@ -208,3 +208,39 @@ footer {
   line-height: 1.5;
   border-left: 4px solid var(--olive);
 }
+
+/* navegação principal */
+
+.main-nav {
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  margin-right: 18px;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.main-nav a:hover {
+  color: var(--olive);
+}
+
+.main-nav a.active {
+  font-weight: 600;
+  color: var(--olive);
+}
+
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--olive);
+  border-radius: 999px;
+}
+
